@@ -1,26 +1,27 @@
-import { useState } from 'react'
+import Nav from './components/Nav'
+import Hero from './components/Hero'
+import About from './components/About'
+import Work from './components/Work'
+import Writing from './components/Writing'
+import Contact from './components/Contact'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="bg-white text-[#111111]" style={{ scrollBehavior: 'smooth' }}>
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Work />
+        <Writing />
+        <Contact />
+      </main>
+      <footer className="border-t border-[#D9D9D6] bg-[#F5F5F3]">
+        <div className="mx-auto max-w-6xl px-4 md:px-6 py-8 flex items-center justify-between text-sm text-[#111111]/70">
+          <span>© {new Date().getFullYear()} Tommaso Nervegna</span>
+          <span>Precise · Thoughtful · Timeless</span>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
